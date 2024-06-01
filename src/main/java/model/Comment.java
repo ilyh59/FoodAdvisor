@@ -4,7 +4,7 @@ package model;
 
 
 public class Comment {
-	
+	// ID is not null and primarey key and auto increment 	
 	private Long id;
 	private String comment;
 
