@@ -12,6 +12,9 @@ public class home extends HttpServlet {
       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
+
 	}
+
+	// create a method to fatch all the restaurant from the database
 
 }
