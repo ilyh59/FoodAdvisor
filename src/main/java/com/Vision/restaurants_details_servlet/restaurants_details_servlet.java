@@ -1,6 +1,7 @@
 package com.Vision.restaurants_details_servlet;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import database_service.CommentTable;
+import database_service.Db_services;
 import database_service.RateTable;
 import model.Comment;
+import model.Product;
 import model.Rate;
 
 
@@ -21,8 +24,8 @@ public class restaurants_details_servlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String id = request.getParameter("id");
-		System.out.println("the id of the restaurant is : " + id);
-		// we need to select the data related to the actual restaurant with the id itself
+		List<Product> foods = Db_services.get_all_foods_for_restaurant(id);
+		request.setAttribute("list_foods", foods);
 
 		request.getRequestDispatcher("/WEB-INF/views/restaurants_details.jsp").forward(request, response);
 	}

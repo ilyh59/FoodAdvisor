@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import model.Product;
 import model.Restaurant;
 import model.User;
 
@@ -69,6 +70,35 @@ public class Db_services {
 		}
 		return restaurants;
 	}
+
+	public static List<Product> get_all_foods_for_restaurant(String restautant_id){
+		List<Product> foods = new ArrayList<>();
+		Connection con  = Db_services.connect();
+		try {
+			PreparedStatement preparedStatement = (PreparedStatement) con.prepareStatement("Select * from FoodItems where restaurant_id = ?");
+			preparedStatement.setInt(1, Integer.parseInt(restautant_id));
+			System.out.println(preparedStatement);
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt("food_id");
+				int restaurant_id = rs.getInt("restaurant_id");
+				String name = rs.getString("name");
+				String desctiption = rs.getString("description");
+				Long price = rs.getLong("price");
+				String category = rs.getString("category");
+				String image_url = rs.getString("image_url");
+
+				foods.add(new Product(id, restaurant_id, name, desctiption, price, category, image_url));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return foods;
+
+	}
+
+
 
 	// add the function that retreives a restaurant specifically
 }

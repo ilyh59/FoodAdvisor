@@ -41,103 +41,47 @@
 
     <h1 class="heading"> most <span>popular</span> foods </h1>
 
-    <div class="box-container">
-
-        <div class="box">
-            <span class="price"> $5 </span>
-            <img src="assets/images/p-1.jpg" alt="">
-            <h3>tasty burger</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">order now</a>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="assets/images/p-2.jpg" alt="">
-            <h3>tasty cakes</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
+    <c:forEach var="food" items="${list_foods}">
+        <div class="box-container">
+            <div class="box">
+                <span class="price"> ${food.getPrice()}</span>
+                <img src="${food.getImage_url()}" alt="">
+                <h3> ${food.getName()} </h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
             </div>
         </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="assets/images/p-3.jpg" alt="">
-            <h3>tasty sweets</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="assets/images/p-4.jpg" alt="">
-            <h3>tasty cupcakes</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="assets/images/p-5.jpg" alt="">
-            <h3>cold drinks</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-        </div>
-        <div class="box">
-            <span class="price"> $5 - $20 </span>
-            <img src="assets/images/p-6.jpg" alt="">
-            <h3>cold ice-cream</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-        </div>
-        <div class="box">
-            <!-- <span class="price"> </span>-->
-            <!-- <img src="images/p-6.jpg" alt="">-->
-             <c:if test="${ !empty note }"><p><c:out value="${ note }" /></p></c:if>
-             <form method="post" action="">
-            <h3>add comment to our restaurant</h3><br>
-            <textarea placeholder="Leave us your feedback here" id="commentaire" name="commentaire" rows="5" cols="33" style="width: 70%; padding: 12px 20px; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;"> </textarea>
-            <br><br>
-            <h3> add note</h3>
-            <input  type="number" min="1" max="5" id="note" name="note" style=" border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;" />
-            <br><br>
-            <input class="btn" type="submit" value="Submit">
-            </form>
-        </div>
-
-    </div>
+    </c:forEach>
 
 </section>
 
 <!-- popular section ends -->
 
+<!-- revieww and rate form starts here -->
 
+<section>
+    <div class="box">
+        <!-- <span class="price"> </span>-->
+        <!-- <img src="images/p-6.jpg" alt="">-->
+         <c:if test="${ !empty note }"><p><c:out value="${ note }" /></p></c:if>
+         <form method="post" action="">
+        <h3>add comment to our restaurant</h3><br>
+        <textarea placeholder="Leave us your feedback here" id="commentaire" name="commentaire" rows="5" cols="33" style="width: 70%; padding: 12px 20px; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;"> </textarea>
+        <br><br>
+        <h3> add note</h3>
+        <input  type="number" min="1" max="5" id="note" name="note" style=" border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;" />
+        <br><br>
+        <input class="btn" type="submit" value="Submit">
+        </form>
+    </div>
+</section>
+
+<!-- review and rate form ends here -->
 
 
 <!-- review section starts  -->
