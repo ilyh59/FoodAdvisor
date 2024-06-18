@@ -47,62 +47,19 @@
     <h1 class="heading"> our <span>restaurants</span> </h1>
 
     <div class="box-container">
-        <div class="box">
-            <!--Ici on va mettre le lien de chaque restaurant-->
-            <a href="<c:url value="/restaurants_details.do"/>">
-                <img class="image" src="assets/images/s-img-1.jpg" alt="">
-                <div class="content">
-                    <img src="assets/images/s-1.png" alt="">
-                    <h3>tasty burger</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur voluptates aperiam tempore libero labore aut.</p>
-                </div>
-            </a>
 
-            
-        </div>
-
-        
-        <div class="box">
-            <img class="image" src="assets/images/s-img-2.jpg" alt="">
-            <div class="content">
-                <img src="assets/images/s-2.png" alt="">
-                <h3>tasty pizza</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur voluptates aperiam tempore libero labore aut.</p>
+        <c:forEach var="restaurant" items="${listRestaurants}">
+            <div class="box">
+                <a href="<c:url value="/restaurants_details.do"/>">
+                    <img class="image" src="${restaurant.image_url}" alt="">
+                    <div class="content">
+                        <img src="assets/images/s-1.png" alt="">
+                        <h3> ${restaurant.name} </h3>
+                        <p> ${restaurant.description} </p>
+                    </div>
+                </a>
             </div>
-        </div>
-        <div class="box">
-            <img class="image" src="assets/images/s-img-3.jpg" alt="">
-            <div class="content">
-                <img src="assets/images/s-3.png" alt="">
-                <h3>cold ice-cream</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur voluptates aperiam tempore libero labore aut.</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="assets/images/s-img-4.jpg" alt="">
-            <div class="content">
-                <img src="assets/images/s-4.png" alt="">
-                <h3>cold drinks</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur voluptates aperiam tempore libero labore aut.</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="assets/images/s-img-5.jpg" alt="">
-            <div class="content">
-                <img src="assets/images/s-5.png" alt="">
-                <h3>tasty sweets</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur voluptates aperiam tempore libero labore aut.</p>
-            </div>
-        </div>
-        <div class="box">
-            <img class="image" src="assets/images/s-img-6.jpg" alt="">
-            <div class="content">
-                <img src="assets/images/s-6.png" alt="">
-                <h3>healty breakfast</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda inventore neque amet ipsa tenetur voluptates aperiam tempore libero labore aut.</p>
-            </div>
-        </div>
-
+        </c:forEach>
     </div>
 
 </section>
