@@ -17,6 +17,7 @@ public class home extends HttpServlet {
       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Restaurant> restaurants = Db_services.selectAllRestaurants();
+		System.out.println("test the github connection login ");
 
 		request.setAttribute("listRestaurants", restaurants);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/home.jsp");
