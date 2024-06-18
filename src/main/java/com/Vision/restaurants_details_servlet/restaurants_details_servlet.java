@@ -19,6 +19,11 @@ public class restaurants_details_servlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		String id = request.getParameter("id");
+		System.out.println("the id of the restaurant is : " + id);
+		// we need to select the data related to the actual restaurant with the id itself
+
 		request.getRequestDispatcher("/WEB-INF/views/restaurants_details.jsp").forward(request, response);
 	}
 

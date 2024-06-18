@@ -50,8 +50,11 @@
 
         <c:forEach var="restaurant" items="${listRestaurants}">
             <div class="box">
-                <a href="<c:url value="/restaurants_details.do"/>">
-                    <img class="image" src="${restaurant.image_url}" alt="">
+                <c:url var="restaurantUrl" value="/restaurants_details.do">
+                    <c:param name="id" value="${restaurant.getId()}" />
+                </c:url>
+                <a href="${restaurantUrl}">
+                    <img class="image" src="${restaurant.getImage_url()}" alt="">
                     <div class="content">
                         <img src="assets/images/s-1.png" alt="">
                         <h3> ${restaurant.name} </h3>

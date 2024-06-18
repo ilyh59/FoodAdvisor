@@ -7,6 +7,13 @@ public class Restaurant {
 	
 	private int restaurant_id;
 	private String name;
+	private String address;
+	private String phone_number;
+	private String email;
+	private String description;
+	private  Long ratings;
+	private int owner_id ;
+	private String image_url;
 
 	public Restaurant(int restaurant_id, String name, String address, String phone_number, String email, String description, Long ratings, int owner_id , String image_url) {
 		this.restaurant_id = restaurant_id;
@@ -19,15 +26,6 @@ public class Restaurant {
 		this.owner_id = owner_id;
 		this.image_url = image_url;
 	}
-
-	private String address;
-	private String phone_number;
-	private String email;
-	private String description;
-	private  Long ratings;
-	private int owner_id ;
-
-	private String image_url;
 
 	public int getId() {
 		return restaurant_id;
@@ -96,7 +94,6 @@ public class Restaurant {
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
 	}
-
 	public String getImage_url() {
 		return image_url;
 	}
