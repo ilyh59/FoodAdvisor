@@ -41,8 +41,8 @@
 
     <h1 class="heading"> most <span>popular</span> foods </h1>
 
-    <c:forEach var="food" items="${list_foods}">
-        <div class="box-container">
+    <div class="box-container">
+        <c:forEach var="food" items="${list_foods}">
             <div class="box">
                 <span class="price"> ${food.getPrice()}</span>
                 <img src="${food.getImage_url()}" alt="">
@@ -55,8 +55,8 @@
                     <i class="far fa-star"></i>
                 </div>
             </div>
-        </div>
-    </c:forEach>
+        </c:forEach>
+    </div>
 
 </section>
 
@@ -64,20 +64,22 @@
 
 <!-- revieww and rate form starts here -->
 
-<section>
-    <div class="box">
-        <!-- <span class="price"> </span>-->
-        <!-- <img src="images/p-6.jpg" alt="">-->
-         <c:if test="${ !empty note }"><p><c:out value="${ note }" /></p></c:if>
-         <form method="post" action="">
-        <h3>add comment to our restaurant</h3><br>
-        <textarea placeholder="Leave us your feedback here" id="commentaire" name="commentaire" rows="5" cols="33" style="width: 70%; padding: 12px 20px; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;"> </textarea>
-        <br><br>
-        <h3> add note</h3>
-        <input  type="number" min="1" max="5" id="note" name="note" style=" border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;" />
-        <br><br>
-        <input class="btn" type="submit" value="Submit">
-        </form>
+<section class="popular" id="popular" >
+    <div class="box-container">
+        <div class="box">
+            <!-- <span class="price"> </span>-->
+            <!-- <img src="images/p-6.jpg" alt="">-->
+             <c:if test="${ !empty note }"><p><c:out value="${ note }" /></p></c:if>
+             <form method="post" action="">
+            <h3>add comment to our restaurant</h3><br>
+            <textarea placeholder="Leave us your feedback here" id="commentaire" name="commentaire" rows="5" cols="33" style="width: 70%; padding: 12px 20px; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;"> </textarea>
+            <br><br>
+            <h3> add rating </h3>
+            <input  type="number" min="1" max="5" id="note" name="note" style=" border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none;" />
+            <br><br>
+            <input class="btn" type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 </section>
 
