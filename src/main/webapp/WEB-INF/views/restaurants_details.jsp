@@ -44,7 +44,7 @@
     <div class="box-container">
         <c:forEach var="food" items="${list_foods}">
             <div class="box">
-                <span class="price"> ${food.getPrice()}</span>
+                <span class="price"> ${food.getPrice()} DH </span>
                 <img src="${food.getImage_url()}" alt="">
                 <h3> ${food.getName()} </h3>
                 <div class="stars">
@@ -176,7 +176,7 @@
 
 <section class="footer">
 
-    <h1 class="credit"> created by <span> TeamI6 </span> | all rights reserved! </h1>
+    <h1 class="credit"> created by <span> ILYAS </span> | all rights reserved! </h1>
 
 </section>
 

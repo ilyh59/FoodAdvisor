@@ -44,7 +44,7 @@
 
     <div class="content">
         <h3>choose your restaurant with love</h3>
-        <p>Nous allons fournir les meilleures recommandations des restaurants pour vous les calaisiens à tous les prix. Chaque
+        <p>Nous allons fournir les meilleures recommandations des restaurants pour vous les maroccains à tous les prix. Chaque
             recommandation contiendra les revues des clients qui ont déjà visité ces
             restaurants et leurs retours sur la qualité des produits présentés…</p>
         <a href="<c:url value="/sign_in.do"/>" class="btn">check now</a>
@@ -63,7 +63,7 @@
 
 <section class="footer">
 
-    <h1 class="credit"> created by <span> TeamI6 </span> | all rights reserved! </h1>
+    <h1 class="credit"> created by <span> ILYAS</span> | all rights reserved! </h1>
 
 </section>
 </body>

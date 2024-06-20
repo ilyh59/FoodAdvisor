@@ -75,7 +75,7 @@
 
 <section class="footer">
 
-    <h1 class="credit"> created by <span> TeamI6 </span> | all rights reserved! </h1>
+    <h1 class="credit"> created by <span> ILYAS </span> | all rights reserved! </h1>
 
 </section>
 
